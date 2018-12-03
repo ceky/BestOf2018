@@ -1,0 +1,23 @@
+body {
+    background: yellow;
+}
+
+section {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    
+    /* position: absolute; */
+    /* top: 0; */
+    z-index: -100;
+}
+
+#section-1 {
+    background: #6C7A89;
+}
+#section-2 {
+    background: #2574A9;
+}
+#section-3 {
+    background: #26A65B;
+}
