@@ -22,6 +22,7 @@ import modernizrConfig from './modernizr-config.json';
 
 
 const dirs = pkg['h5bp-configs'].directories;
+var sass = require('gulp-sass');
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -161,6 +162,12 @@ gulp.task('modernizr', (done) =>{
 
 });
 
+gulp.task('sass', function(){
+  return gulp.src(`${dirs.src}/scss/*.scss`)
+    .pipe(sass().on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
+    .pipe(gulp.dest(`${dirs.src}/css`))
+});
+
 
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
@@ -177,7 +184,7 @@ gulp.task('archive', (done) => {
 gulp.task('build', (done) => {
   runSequence(
     ['clean'],
-    'copy', 'modernizr',
+    'sass', 'copy', 'modernizr',
     done);
 });
 

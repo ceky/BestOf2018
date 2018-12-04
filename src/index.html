@@ -11,22 +11,40 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.2/flickity.css" />
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/common.css"> 
 </head>
 
 <body>
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.2/flickity.pkgd.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
   <script src="js/main.js"></script>
 
+  <script> 
+    $(function(){
+      $("#awards").load("templates/awards.html"); 
+      $("#january").load("templates/january.html", function() {
+        $('.carousel').flickity({
+          wrapAround: true
+        });
+      }); 
+      $("#february").load("templates/february.html", function() {
+        $('.carousel').flickity({
+          wrapAround: true
+        });
+      }); 
+    });
+  </script>
+
   <div id="pagepiling">
-    <section class="section" id="section-1">One</section>
-    <section class="section" id="section-2">Two</section>
-    <section class="section" id="section-3">Three</section>
+    <section class="section section-1"><div id="awards"></div></section>
+    <section class="section section-2"><div id="january"></div></section>
+    <section class="section section-3"><div id="february"></div></section>
   </div>
 </body>
 
