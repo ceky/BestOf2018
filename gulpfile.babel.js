@@ -80,6 +80,7 @@ gulp.task('copy', [
   'copy:.htaccess',
   'copy:index.html',
   'copy:jquery',
+  'copy:assets',
   'copy:license',
   'copy:main.css',
   'copy:misc',
@@ -111,6 +112,11 @@ gulp.task('copy:jquery', () =>
   gulp.src(['node_modules/jquery/dist/jquery.min.js'])
     .pipe(plugins().rename(`jquery-${pkg.devDependencies.jquery}.min.js`))
     .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
+);
+
+gulp.task('copy:assets', () =>
+  gulp.src([`${dirs.src}/assets/*.*`])
+    .pipe(gulp.dest(dirs.dist))
 );
 
 gulp.task('copy:license', () =>
