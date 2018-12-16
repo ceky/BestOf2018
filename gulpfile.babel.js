@@ -169,7 +169,7 @@ gulp.task('modernizr', (done) =>{
 });
 
 gulp.task('sass', function(){
-  return gulp.src(`${dirs.src}/scss/*.scss`)
+  return gulp.src(`${dirs.src}/scss/2018.scss`)
     .pipe(sass().on('error', sass.logError)) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest(`${dirs.src}/css`))
 });

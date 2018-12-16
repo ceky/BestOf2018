@@ -1,0 +1,23 @@
+:root {
+  --base-font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+
+html {
+  font-size: var(--base-font-size);
+  font-family: 'Montserrat', sans-serif; }
+
+body {
+  background: yellow; }
+
+.text-center {
+  text-align: center; }
+
+.header-container {
+  background-color: #ebd251; }
+  .header-container label {
+    display: inline-block;
+    width: 100%;
+    font-size: calc(var(--base-font-size) * 0.7); }
+  .header-container .header-text {
+    margin: 0;
+    cursor: default;
+    line-height: calc(var(--base-font-size) * 1.2); }
