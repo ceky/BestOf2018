@@ -32,14 +32,13 @@ h2 {
   overflow: hidden; }
 
 .ribbon {
-  font-size: 16px !important;
-  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  font-size: calc(var(--base-font-size) * 0.8);
   width: 50%;
   position: relative;
-  background: #ba89b6;
-  color: #fff;
+  background: #ebd251;
+  color: #000;
   text-align: center;
-  padding: 1em 2em;
+  padding: 0.7em 2em;
   /* Adjust to suit */
   margin: 2em auto 3em;
   /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */ }
@@ -48,7 +47,7 @@ h2 {
     position: absolute;
     display: block;
     bottom: -1em;
-    border: 1.5em solid #986794;
+    border: 1.5em solid #dab91b;
     z-index: -1; }
   .ribbon:before {
     left: -2em;
@@ -63,7 +62,7 @@ h2 {
     position: absolute;
     display: block;
     border-style: solid;
-    border-color: #804f7c transparent transparent transparent;
+    border-color: #9c8407 transparent transparent transparent;
     bottom: -1em; }
   .ribbon .ribbon-content:before {
     left: 0;
@@ -71,3 +70,20 @@ h2 {
   .ribbon .ribbon-content:after {
     right: 0;
     border-width: 1em 1em 0 0; }
+
+.awards-container:nth-child(odd) {
+  background-color: #ebd251;
+  color: #111111; }
+  .awards-container:nth-child(odd) .ribbon {
+    color: white;
+    background-color: #333333; }
+    .awards-container:nth-child(odd) .ribbon:before, .awards-container:nth-child(odd) .ribbon:after {
+      border: 1.5em solid #222222; }
+    .awards-container:nth-child(odd) .ribbon:before {
+      border-right-width: 1.5em;
+      border-left-color: transparent; }
+    .awards-container:nth-child(odd) .ribbon:after {
+      border-left-width: 1.5em;
+      border-right-color: transparent; }
+    .awards-container:nth-child(odd) .ribbon .ribbon-content:before, .awards-container:nth-child(odd) .ribbon .ribbon-content:after {
+      border-color: #111111 transparent transparent transparent; }

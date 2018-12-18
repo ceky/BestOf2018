@@ -7,16 +7,15 @@
 }
 
 .ribbon {
-    font-size: 16px !important;
-    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+    font-size: calc(var(--base-font-size) * 0.8);
    
     width: 50%;
        
     position: relative;
-    background: #ba89b6;
-    color: #fff;
+    background: $primary-color;
+    color: #000;
     text-align: center;
-    padding: 1em 2em; /* Adjust to suit */
+    padding: 0.7em 2em; /* Adjust to suit */
     margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 
     &:before, &:after {
@@ -24,7 +23,7 @@
         position: absolute;
         display: block;
         bottom: -1em;
-        border: 1.5em solid #986794;
+        border: 1.5em solid $primary-color-darker;
         z-index: -1;
     }
     
@@ -45,7 +44,7 @@
         position: absolute;
         display: block;
         border-style: solid;
-        border-color: #804f7c transparent transparent transparent;
+        border-color: $primary-color-darkest transparent transparent transparent;
         bottom: -1em;
     }
     
@@ -57,5 +56,33 @@
     .ribbon-content:after {
         right: 0;
         border-width: 1em 1em 0 0;
+    }
+}
+
+.awards-container:nth-child(odd) {
+    background-color: $primary-color;
+    color: $secondary-color;
+
+    .ribbon {
+        color: white;
+        background-color: $secondary-color-lightest;
+    
+        &:before, &:after {
+            border: 1.5em solid $secondary-color-lighter;
+        }
+
+        &:before {
+            border-right-width: 1.5em;
+            border-left-color: transparent;
+        }
+        
+        &:after {
+            border-left-width: 1.5em;
+            border-right-color: transparent;
+        }
+    
+        .ribbon-content:before, .ribbon-content:after {
+            border-color: $secondary-color transparent transparent transparent;
+        }
     }
 }
