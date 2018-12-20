@@ -87,3 +87,30 @@ h2 {
       border-right-color: transparent; }
     .awards-container:nth-child(odd) .ribbon .ribbon-content:before, .awards-container:nth-child(odd) .ribbon .ribbon-content:after {
       border-color: #111111 transparent transparent transparent; }
+
+.list-container {
+  list-style-type: none;
+  margin: 0 1em;
+  padding-left: 0; }
+  .list-container .item {
+    display: flex;
+    margin-bottom: 1em; }
+    .list-container .item .item--image {
+      -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+      height: auto;
+      width: 100%;
+      max-width: 7em;
+      max-height: 7em; }
+    .list-container .item .item--content {
+      margin: 0.5em; }
+      .list-container .item .item--content .item--title {
+        font-size: calc(var(--base-font-size) * 0.8);
+        margin: 0.5em 0; }
+      .list-container .item .item--content .item--author {
+        font-size: calc(var(--base-font-size) * 0.6);
+        margin: 0.5em 0; }
+      .list-container .item .item--content .item--description {
+        font-size: calc(var(--base-font-size) * 0.6);
+        margin: 0.5em 0;
+        font-style: italic; }

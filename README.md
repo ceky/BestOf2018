@@ -11,3 +11,5 @@ https://www.smashingmagazine.com/2016/05/fluid-typography/
 A design for the ribbon from the css-tricks
 - https://github.com/peterhry/CircleType
 Curves the text in the header
+- http://bennettfeely.com/clippy/
+Cut the photos using clip-path property
