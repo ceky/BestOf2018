@@ -4,10 +4,11 @@
     .carousel--cell {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         align-items: center;
         width: 66%;
         min-height: 18em;
-        height: 100%;
+        height: calc(100% - 1em);
         margin-right: 10px;
         background: $secondary-color-lightest;
         color: white;
@@ -25,8 +26,26 @@
         }
 
         .carousel--image {
-            max-width: 100%;
-            height: auto;
+            max-width: calc(100% - 1em);
+            max-height: 10em;
+            margin-bottom: 1em;
         }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .carousel--cell {
+        min-height: 17em !important;
+    }
+}
+@media screen and (min-width: 1550px) {
+    .carousel--cell {
+        min-height: 16em !important;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .carousel--cell {
+        min-height: 15em !important;
     }
 }

@@ -3,6 +3,8 @@ Based on https://html5boilerplate.com/
 gulp build
 
 Tools used:
+- https://flickity.metafizzy.co/
+Carousel
 - https://github.com/h5bp/html5-boilerplate
 Boilerplate for this project
 - Formula for fluid typography
