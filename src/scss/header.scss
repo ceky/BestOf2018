@@ -1,16 +1,16 @@
 .header-container {
     background-color: $primary-color;
-    padding: 8px;
+    padding: 1.5em;
 
     label {
         display: inline-block;
         width: 100%;
-        font-size: calc(var(--base-font-size) * 0.6);
+        font-size: var(--smaller-font-size);
     }
 
     .header-text {
         margin: 0;
         cursor: default;
-        line-height: calc(var(--base-font-size) * 1.2);
+        line-height: var(--biggest-font-size);
     }
 }

@@ -4,56 +4,107 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-}
 
-.ribbon {
-    font-size: calc(var(--base-font-size) * 0.8);
-    width: 50%;
-    position: relative;
-    background: $primary-color;
-    color: #000;
-    text-align: center;
-    padding: 0.7em 2em; /* Adjust to suit */
-    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    .ribbon {
+        font-size: var(--base-font-size);
+        width: 50%;
+        position: relative;
+        background: $primary-color;
+        color: #000;
+        text-align: center;
+        padding: 0.7em 2em; /* Adjust to suit */
+        margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+        box-shadow: rgba(255, 235, 0, 0.3) 0 16px 7px -13px;
+    
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: -1em;
+            border: 1.5em solid $primary-color-darker;
+            z-index: -1;
+        }
+        
+        &:before {
+            left: -2em;
+            border-right-width: 1.5em;
+            border-left-color: transparent;
+        }
+        
+        &:after {
+            right: -2em;
+            border-left-width: 1.5em;
+            border-right-color: transparent;
+        }
+           
+        .ribbon-content:before, .ribbon-content:after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-style: solid;
+            border-color: $primary-color-darkest transparent transparent transparent;
+            bottom: -1em;
+        }
+        
+        .ribbon-content:before {
+            left: 0;
+            border-width: 1em 0 0 1em;
+        }
+        
+        .ribbon-content:after {
+            right: 0;
+            border-width: 1em 1em 0 0;
+        }
+    }
 
-    &:before, &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        bottom: -1em;
-        border: 1.5em solid $primary-color-darker;
-        z-index: -1;
-    }
+    .list-container {
+        list-style-type: none;
+        padding: 0;
     
-    &:before {
-        left: -2em;
-        border-right-width: 1.5em;
-        border-left-color: transparent;
-    }
+        .item {
+            display: flex;
+            margin-bottom: 1em;
+            padding: 0 1em;
+            align-items: center;
+            &:hover {
+                background-color: $secondary-color-lighter;
+            }
     
-    &:after {
-        right: -2em;
-        border-left-width: 1.5em;
-        border-right-color: transparent;
-    }
-       
-    .ribbon-content:before, .ribbon-content:after {
-        content: "";
-        position: absolute;
-        display: block;
-        border-style: solid;
-        border-color: $primary-color-darkest transparent transparent transparent;
-        bottom: -1em;
-    }
+            .item--image {
+                -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+                clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+                height: auto;
+                width: 100%;
+                max-width: 7em;
+                max-height: 7em;
+            }
+        
+            .item--content {  
+                margin: 0 0.5em;
     
-    .ribbon-content:before {
-        left: 0;
-        border-width: 1em 0 0 1em;
-    }
+                .item--title {
+                    font-size: var(--base-font-size);
+                    margin: 0;
+                }
+            
+                .item--subtitle {
+                    font-size: var(--smaller-font-size);
+                    margin: 0.5em 0;
+                }
+            
+                .item--description {
+                    font-size: var(--smaller-font-size);
+                    margin: 0.5em 0;
+                    font-style: italic;
+                }
+            }
+        }
     
-    .ribbon-content:after {
-        right: 0;
-        border-width: 1em 1em 0 0;
+        a:nth-child(even) {
+            .item--image {
+                order: 1;
+            }
+        }
     }
 }
 
@@ -61,9 +112,18 @@
     background-color: $primary-color;
     color: $secondary-color;
 
+    .list-container {
+        .item {
+            &:hover {
+                background-color: $primary-color-darker;
+            }
+        }
+    }
+
     .ribbon {
         color: white;
         background-color: $secondary-color-lightest;
+        box-shadow: rgba(0,0,0,0.5) 0 16px 8px -12px;
     
         &:before, &:after {
             border: 1.5em solid $secondary-color-lighter;
@@ -84,61 +144,14 @@
         }
     }
 
-    .item:nth-child(odd) {
+    a:nth-child(odd) {
         .item--image {
             order: 1;
         }
     }
-    .item:nth-child(even) {
+    a:nth-child(even) {
         .item--image {
             order: 0;
-        }
-    }
-}
-
-.list-container {
-    list-style-type: none;
-    margin: 0 1em;
-    padding-left: 0;
-
-    .item {
-        display: flex;
-        margin-bottom: 1em;
-        align-items: center;
-
-        .item--image {
-            -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-            height: auto;
-            width: 100%;
-            max-width: 7em;
-            max-height: 7em;
-        }
-    
-        .item--content {  
-            margin: 0 0.5em;
-
-            .item--title {
-                font-size: calc(var(--base-font-size) * 0.8);
-                margin: 0;
-            }
-        
-            .item--subtitle {
-                font-size: calc(var(--base-font-size) * 0.6);
-                margin: 0.5em 0;
-            }
-        
-            .item--description {
-                font-size: calc(var(--base-font-size) * 0.6);
-                margin: 0.5em 0;
-                font-style: italic;
-            }
-        }
-    }
-
-    .item:nth-child(even) {
-        .item--image {
-            order: 1;
         }
     }
 }
