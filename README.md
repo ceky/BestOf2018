@@ -1,7 +1,7 @@
 # Best of 2018
 A project to highlight the best things that I experienced during 2018.
 
-##Build locally
+## Build locally
 
 ``` bash
 gulp build
