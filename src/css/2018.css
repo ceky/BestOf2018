@@ -137,9 +137,9 @@ h2 {
   .awards-container:nth-child(odd) a:nth-child(even) .item--image {
     order: 0; }
 
-.carousel {
+section {
   background: #ebd251; }
-  .carousel .carousel--cell {
+  section .carousel .carousel--cell {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -153,14 +153,14 @@ h2 {
     border-radius: 5px;
     counter-increment: carousel-cell;
     box-shadow: inset 0 4px 7px 1px #272727, inset 0 -5px 20px rgba(173, 186, 204, 0.25), 0 2px 6px rgba(0, 21, 64, 0.14), 0 10px 20px rgba(0, 21, 64, 0.05); }
-    .carousel .carousel--cell .carousel--month {
+    section .carousel .carousel--cell .carousel--month {
       margin: 1em 0.2em 0.2em;
       padding: 0;
       font-size: var(--bigger-font-size); }
-    .carousel .carousel--cell .carousel--description {
+    section .carousel .carousel--cell .carousel--description {
       margin: 0.2em 1em;
       font-size: var(--smaller-font-size); }
-    .carousel .carousel--cell .carousel--image {
+    section .carousel .carousel--cell .carousel--image {
       max-width: calc(100% - 2em);
       max-height: 10em;
       margin-bottom: 1em; }
