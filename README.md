@@ -25,6 +25,10 @@ https://github.com/h5bp/html5-boilerplate
 
 Carousel https://flickity.metafizzy.co/
 
+- Scroll animation
+
+https://scrollrevealjs.org/
+
 - Formula for fluid typography
 
 https://www.smashingmagazine.com/2016/05/fluid-typography/
